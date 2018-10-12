@@ -1,23 +1,40 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <vue-header></vue-header>
+    <div class="HolyGrail-body">
+      <vue-sidebar></vue-sidebar>
+      <router-view></router-view>
+    </div>
+    <vue-footer></vue-footer>
   </div>
 </template>
 
 <script>
+import vueHeader from '@/components/Header'
+import vueSidebar from '@/components/Sidebar'
+import vueFooter from '@/components/footer'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    vueHeader,
+    vueSidebar,
+    vueFooter
+  }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+}
+
+.HolyGrail-body {
+  display: flex;
+  flex: 1;
 }
 </style>

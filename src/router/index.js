@@ -1,15 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import vHome from '@/components/Home'
+import VueBlu from 'vue-blu'
+import 'vue-blu/dist/css/vue-blu.min.css'
 
 Vue.use(Router)
+Vue.use(VueBlu)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Home',
+      component: vHome
     }
   ]
 })
